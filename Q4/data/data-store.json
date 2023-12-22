@@ -1,0 +1,102 @@
+  [
+    {
+      "id": 1,
+      "name": "Smartphone",
+      "brand": "TechGuru",
+      "price": 499.99,
+      "currentStock": 50,
+      "reviews": 4,
+      "description": "A high-end smartphone with the latest features.",
+      "imageLink": "https://example.com/smartphone.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Laptop",
+      "brand": "PowerBook",
+      "price": 1099.99,
+      "currentStock": 20,
+      "reviews": 5,
+      "description": "Powerful laptop for professional use and gaming.",
+      "imageLink": "https://example.com/laptop.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Smart TV",
+      "brand": "VisionMaster",
+      "price": 799.99,
+      "currentStock": 30,
+      "reviews": 3,
+      "description": "Ultra HD Smart TV with a large display and smart features.",
+      "imageLink": "https://example.com/smart-tv.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Wireless Earbuds",
+      "brand": "SoundBlast",
+      "price": 79.99,
+      "currentStock": 100,
+      "reviews": 5,
+      "description": "Bluetooth wireless earbuds with noise cancellation.",
+      "imageLink": "https://example.com/earbuds.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Digital Camera",
+      "brand": "PixelShot",
+      "price": 599.99,
+      "currentStock": 15,
+      "reviews": 4,
+      "description": "High-resolution digital camera for photography enthusiasts.",
+      "imageLink": "https://example.com/camera.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Gaming Console",
+      "brand": "GameMaster",
+      "price": 349.99,
+      "currentStock": 25,
+      "reviews": 4,
+      "description": "Next-gen gaming console for immersive gaming experiences.",
+      "imageLink": "https://example.com/gaming-console.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Fitness Tracker",
+      "brand": "FitPro",
+      "price": 89.99,
+      "currentStock": 40,
+      "reviews": 5,
+      "description": "Advanced fitness tracker to monitor health and workouts.",
+      "imageLink": "https://example.com/fitness-tracker.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Home Security Camera",
+      "brand": "SecureView",
+      "price": 129.99,
+      "currentStock": 18,
+      "reviews": 3,
+      "description": "Smart home security camera with night vision and motion detection.",
+      "imageLink": "https://example.com/security-camera.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Wireless Mouse",
+      "brand": "TechClick",
+      "price": 29.99,
+      "currentStock": 60,
+      "reviews": 4,
+      "description": "Ergonomic wireless mouse for smooth navigation and productivity.",
+      "imageLink": "https://example.com/wireless-mouse.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Portable Speaker",
+      "brand": "SoundWave",
+      "price": 49.99,
+      "currentStock": 35,
+      "reviews": 5,
+      "description": "Compact and powerful portable speaker for music on the go.",
+      "imageLink": "https://example.com/portable-speaker.jpg"
+    }
+  ]

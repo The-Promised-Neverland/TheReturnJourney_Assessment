@@ -5,8 +5,7 @@
 * Condition - No use of built-in functions 
 
 
-
-Sample Tests:
+Sample Cases:
 
 Case 1:
 Input - [1,1,5,2,1,2]
@@ -17,6 +16,9 @@ Case 2:
 Input - [1,2,5,2,1]
 Output - [1,2,5]
 
+
+
+Run all tests by command - npm run testUniqueArray
 */
 
 
