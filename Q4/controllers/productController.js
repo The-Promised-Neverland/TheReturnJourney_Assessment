@@ -1,14 +1,28 @@
-import connectDB from "../data/connectLocalDB.js";
+import productService from "../services/productService.js"
 
-let database = connectDB();
+/*
+HttpMethod: GET
+Endpoint: /
+Request: None
+Response: JSON, All products 
+*/
 
 const getAllProducts = (req, res) => {
-  res.status(200).json(database);
+  const products = productService.allProducts();
+  res.status(200).json(products);
 };
 
+
+/*
+HttpMethod: GET
+Endpoint: /:id
+Request: productId passed as 'id' params
+Response: JSON, Product having id 
+*/
 const getProductById = (req, res) => {
   const productId = parseInt(req.params.id);
-  const product = database.find((p) => p.id === productId);
+
+  const product = productService.getById(productId);
 
   if (product) {
     res.json(product);
@@ -17,42 +31,53 @@ const getProductById = (req, res) => {
   }
 };
 
+
+/*
+HttpMethod: PUT
+Endpoint: /:id
+Request: productId passed as 'id' params
+Response: JSON, Updated product having id 
+*/
 const updateProductById = (req, res) => {
   const productId = parseInt(req.params.id);
-  const updatedProduct = req.body;
-  const index = database.findIndex((p) => p.id === productId);
 
-  if (index !== -1) {
-    database[index] = { ...database[index], ...updatedProduct };
-    res.json(database[index]);
+  const isUpdated = productService.updateById(productId, req.body)
+  if (isUpdated) {
+    res.json({ message: "Product updated successfully" });
   } else {
     res.status(404).json({ error: "Product not found" });
   }
 };
 
+
+/*
+HttpMethod: DELETE
+Endpoint: /:id
+Request: productId passed as 'id' params
+Response: JSON message 
+*/
 const deleteProductById = (req, res) => {
   const productId = parseInt(req.params.id);
 
-  const index = database.findIndex((p) => p.id === productId);
+  const isDeleted = productService.deleteById(productId);
 
-  if (index !== -1) {
-    database.splice(index, 1);
-
+  if (isDeleted) {
     res.json({ message: "Product deleted successfully" });
   } else {
     res.status(404).json({ error: "Product not found" });
   }
 };
 
+
+/*
+HttpMethod: POST
+Endpoint: /
+Request: Product details passed as Params
+Response: JSON message 
+*/
 const createProduct = (req, res) => {
-  const newProduct = req.body;
-
-  const newProductId = database.length + 1;
-  const productWithId = { id: newProductId, ...newProduct };
-
-  database.push(productWithId);
-
-  res.status(201).json(productWithId);
+  newProduct(req.body);
+  res.status(201).json({ message: 'Product created successfully' });
 };
 
 export {

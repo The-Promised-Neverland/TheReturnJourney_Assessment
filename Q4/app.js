@@ -6,14 +6,18 @@ import {
   httpMethodLogger,
   urlLogger,
 } from './middlewares/requestLoggerMiddleware.js';
+import cors from "cors"
 
 const port = process.env.PORT || 5000;
 
 const app = express();
 
+app.use(cors())
+
 // Body parser Middleware
 app.use(express.json());
 
+// Middlewares to pass through each request
 app.use(timestampLogger, httpMethodLogger, urlLogger);
 
 app.use('/api/products', productRoutes);
