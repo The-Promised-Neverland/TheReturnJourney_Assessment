@@ -7,8 +7,9 @@ import {
   urlLogger,
 } from './middlewares/requestLoggerMiddleware.js';
 import cors from "cors"
+import dotenv from "dotenv";
 
-const port = process.env.PORT || 5000;
+dotenv.config();
 
 const app = express();
 
@@ -22,6 +23,10 @@ app.use(timestampLogger, httpMethodLogger, urlLogger);
 
 app.use('/api/products', productRoutes);
 
+const port = process.env.PORT;
+
 app.listen(port, () => {
-    console.log(`\n🚀 ${chalk.green('App started on port')} ${chalk.green(port)}\n`);
-  });
+  console.log(`🚀 ${chalk.blue('Server started on')} ${chalk.green('port', port)} in ${chalk.red(process.env.NODE_ENV, 'mode')}`);
+});
+
+export default app;

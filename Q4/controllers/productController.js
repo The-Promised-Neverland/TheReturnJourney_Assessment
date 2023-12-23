@@ -25,7 +25,7 @@ const getProductById = (req, res) => {
   const product = productService.getById(productId);
 
   if (product) {
-    res.json(product);
+    res.status(200).json(product);
   } else {
     res.status(404).json({ error: "Product not found" });
   }
@@ -43,7 +43,7 @@ const updateProductById = (req, res) => {
 
   const isUpdated = productService.updateById(productId, req.body)
   if (isUpdated) {
-    res.json({ message: "Product updated successfully" });
+    res.status(200).json({ message: "Product updated successfully" });
   } else {
     res.status(404).json({ error: "Product not found" });
   }
@@ -62,7 +62,7 @@ const deleteProductById = (req, res) => {
   const isDeleted = productService.deleteById(productId);
 
   if (isDeleted) {
-    res.json({ message: "Product deleted successfully" });
+    res.status(200).json({ message: "Product deleted successfully" });
   } else {
     res.status(404).json({ error: "Product not found" });
   }
@@ -76,7 +76,7 @@ Request: Product details passed as Params
 Response: JSON message 
 */
 const createProduct = (req, res) => {
-  newProduct(req.body);
+  productService.newProduct(req.body);
   res.status(201).json({ message: 'Product created successfully' });
 };
 

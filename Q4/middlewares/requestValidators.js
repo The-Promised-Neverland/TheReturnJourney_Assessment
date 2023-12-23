@@ -1,5 +1,5 @@
 const validateRequest = (req, res, next) => {
-    const allowedDetails = ["name", "brand", "price", "currentStock", "reviews", "description", "imageLink"];
+    const allowedDetails = ["name", "brand", "price", "currentStock", "reviews", "description"];
     const requestDetails = Object.keys(req.body);
 
     // Check if the request has only allowed details
@@ -14,7 +14,7 @@ const validateRequest = (req, res, next) => {
 
 
 const validateRequiredFields = (req, res, next) => {
-    const requiredFields = ["name", "brand", "price", "currentStock", "reviews", "description", "imageLink"];
+    const requiredFields = ["name", "brand", "price", "currentStock", "reviews", "description"];
     const missingFields = requiredFields.filter(field => !req.body.hasOwnProperty(field));
 
     // Check if all required fields (except id) are present
