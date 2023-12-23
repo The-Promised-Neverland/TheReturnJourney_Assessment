@@ -34,6 +34,8 @@ const mockProducts = [
     },
 ];
 
+
+
 // Mocking the productService functions
 jest.mock("../services/productService.js", () => {
     const ProductModel = require("../models/productModel.js").default; // Direct import of ProductModel
@@ -72,6 +74,9 @@ jest.mock("../services/productService.js", () => {
 });
 
 
+
+/* -------------------------------x--------------------------------GET OPERATIONS------------------------x-------------------------------------x--------------- */
+
 describe("GET /, get all products", () => {
     test("should return all products", async () => {
         const response = await request.get("/api/products");
@@ -95,6 +100,10 @@ describe("GET /:id, get product by id", () => {
         expect(response.body).toEqual({ error: "Product not found" });
     });
 });
+
+
+/* -------------------------------x--------------------------------POST OPERATIONS----------------------------------x-------------------------------------x--------------- */
+
 
 describe("POST /, creates a new product", () => {
     test("should create a new product", async () => {
@@ -145,6 +154,10 @@ describe("POST /, creates a new product", () => {
     });
 });
 
+
+/* -------------------------------x--------------------------------PUT OPERATIONS-----------------------------x-------------------------------------x--------------- */
+
+
 describe("PUT /:id, update product by id", () => {
     test("should update a product by id", async () => {
         const productIdToUpdate = 1;
@@ -192,6 +205,11 @@ describe("PUT /:id, update product by id", () => {
     });
 });
 
+
+/* -------------------------------x---------------------------------DELETE OPERATIONS-------------------------------x-------------------------------------x--------------- */
+
+
+
 describe("DELETE /:id, delete product by id", () => {
     test("should delete a product by id", async () => {
         const productIdToDelete = 1;
@@ -199,8 +217,8 @@ describe("DELETE /:id, delete product by id", () => {
         expect(response.status).toBe(200);
         expect(response.body).toEqual({ message: "Product deleted successfully" });
         // Check that the product is no longer present in mockProducts
-    const deletedProduct = mockProducts.find((product) => product.id === productIdToDelete);
-    expect(deletedProduct).toBeUndefined();
+        const deletedProduct = mockProducts.find((product) => product.id === productIdToDelete);
+        expect(deletedProduct).toBeUndefined();
     });
 
     test("should return 404 if product id not found for delete", async () => {
