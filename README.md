@@ -34,7 +34,10 @@ Run the corresponding command to test.
 
 ## Running the Server for Q4 RESTful API
 
+**Before consuming any REST service, switch to dev profile in .env file**
+
 To start the server, use the following command: `npm start`
+
 
 ## API Endpoints
 
