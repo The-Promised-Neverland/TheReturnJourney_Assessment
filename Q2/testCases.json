@@ -1,0 +1,46 @@
+{
+  "testCases": [
+    {
+      "description": "Merge cars with overlapping properties, prefer car2 values",
+      "car1": { "id": 1, "brand": "Toyota", "year": 2022 },
+      "car2": { "id": 2, "brand": "Honda", "model": "SUV" },
+      "expectedResult": { "id": 2, "brand": "Honda", "year": 2022, "model": "SUV" }
+    },
+    {
+      "description": "Merge cars with additional properties in car1",
+      "car1": { "brand": "Toyota", "model": "Sedan", "color": "Red" },
+      "car2": { "brand": "Honda", "model": "SUV" },
+      "expectedResult": { "brand": "Honda", "model": "SUV", "color": "Red" }
+    },
+    {
+      "description": "Merge cars with additional properties in car2",
+      "car1": { "brand": "Hyundai" },
+      "car2": { "brand": "Toyota", "factoryCode": 123, "color": "Red" },
+      "expectedResult": { "brand": "Toyota", "factoryCode": 123, "color": "Red" }
+    },
+    {
+      "description": "Merge empty cars",
+      "car1": {},
+      "car2": {},
+      "expectedResult": {}
+    },
+    {
+      "description": "Merge cars when car1 is empty",
+      "car1": {},
+      "car2": { "owner": "Rakesh" },
+      "expectedResult": { "owner": "Rakesh" }
+    },
+    {
+      "description": "Merge cars with car1 brand as null and car2 model as null",
+      "car1": { "brand": null, "model": "Sedan" },
+      "car2": { "brand": "Toyota", "model": null },
+      "expectedResult": { "brand": "Toyota", "model": "Sedan" }
+    },
+    {
+      "description": "Merge cars with car1 brand as null and car2 brand as null",
+      "car1": { "brand": null, "model": "Sedan" },
+      "car2": { "brand": null, "model": null },
+      "expectedResult": { "brand": null, "model": "Sedan" }
+    }
+  ]
+}

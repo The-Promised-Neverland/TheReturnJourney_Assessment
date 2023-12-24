@@ -1,0 +1,64 @@
+{
+  "testCases": [
+    {
+      "description": "Case 1: [1, 1, 5, 2, 1, 2] and [1, 4, 2, 6, 2]",
+      "arr1": [1, 1, 5, 2, 1, 2],
+      "arr2": [1, 4, 2, 6, 2],
+      "expectedResult": [1, 2]
+    },
+    {
+      "description": "Case 2: [1, 5, 9, 1, 2, 3] and [1, 9, 2, 2, 3]",
+      "arr1": [1, 5, 9, 1, 2, 3],
+      "arr2": [1, 9, 2, 2, 3],
+      "expectedResult": [1, 2, 3, 9]
+    },
+    {
+      "description": "Case 3: [] and [1, 2, 3]",
+      "arr1": [],
+      "arr2": [1, 2, 3],
+      "expectedResult": []
+    },
+    {
+      "description": "Case 4: [1, 2, 3] and []",
+      "arr1": [1, 2, 3],
+      "arr2": [],
+      "expectedResult": []
+    },
+    {
+      "description": "Case 5: [1, 1, 1] and [1, 1, 1]",
+      "arr1": [1, 1, 1],
+      "arr2": [1, 1, 1],
+      "expectedResult": [1]
+    },
+    {
+      "description": "Case 6: [1, 2, 3] and [4, 5, 6]",
+      "arr1": [1, 2, 3],
+      "arr2": [4, 5, 6],
+      "expectedResult": []
+    },
+    {
+      "description": "Case 7: [1, 2, 3] and [3, 4, 5]",
+      "arr1": [1, 2, 3],
+      "arr2": [3, 4, 5],
+      "expectedResult": [3]
+    },
+    {
+      "description": "Case 8: [5, 2, 8, 2] and [2, 5, 8, 2]",
+      "arr1": [5, 2, 8, 2],
+      "arr2": [2, 5, 8, 2],
+      "expectedResult": [2, 5, 8]
+    },
+    {
+      "description": "Case 9: [1, 2, 3] and [3, 2, 1]",
+      "arr1": [1, 2, 3],
+      "arr2": [3, 2, 1],
+      "expectedResult": [1, 2, 3]
+    },
+    {
+      "description": "Case 10: [1, 2, 3] and [4, 5, 6, 1, 2, 3]",
+      "arr1": [1, 2, 3],
+      "arr2": [4, 5, 6, 1, 2, 3],
+      "expectedResult": [1, 2, 3]
+    }
+  ]
+}

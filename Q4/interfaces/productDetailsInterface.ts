@@ -1,4 +1,5 @@
 interface ProductDetails {
+  id: number,
   name: string;
   brand: string;
   price: number;
