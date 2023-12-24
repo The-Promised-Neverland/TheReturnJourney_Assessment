@@ -54,7 +54,8 @@ To start the server, use the following command: `npm start`
       "description": "A high-end smartphone with the latest features."
     },
     // ... other products
-  ]```
+  ]
+  ```
 
 - **Endpoint:** `/api/products/:id`
 - **Method:** GET
@@ -69,7 +70,8 @@ To start the server, use the following command: `npm start`
       "currentStock": 50,
       "reviews": 4,
       "description": "A high-end smartphone with the latest features."
-    }```
+    }
+    ```
 
 
 - **Endpoint:** `/api/products/:id`
@@ -84,12 +86,14 @@ To start the server, use the following command: `npm start`
       "currentStock": 15,
       "reviews": 4,
       "description": "An updated product with new features." 
-    }``` 
+    }
+    ``` 
 - **Example Response:**
     ```javascript 
     {
         "message": "Product updated successfully"
-    }```
+    }
+    ```
 
     
 - **Endpoint:** `/api/products/:id`
@@ -99,7 +103,8 @@ To start the server, use the following command: `npm start`
     ```javascript 
     {
         "message": "Product deleted successfully"
-    }```
+    }
+    ```
 
 
 - **Endpoint:** `/api/products/`
@@ -114,9 +119,11 @@ To start the server, use the following command: `npm start`
       "currentStock": 15,
       "reviews": 4,
       "description": "New product description." 
-    }``` 
+    }
+    ``` 
 - **Example Response:**
     ```javascript 
     {
         "message": "Product created successfully"
-    }```
+    }
+    ```
