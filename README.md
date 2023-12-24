@@ -23,13 +23,13 @@ Q4: RESTful API Development with Middlewares and Testing
 
 Run the corresponding command to test.
 
-### Q1 - Unique Array : `npm run testQ1`
+ Q1 - Unique Array : `npm run testQ1`
 
-### Q2 - Merged Car Props : `npm run testQ2`
+ Q2 - Merged Car Props : `npm run testQ2`
 
-### Q3 - Common Elements Between Two Arrays : `npm run testQ3`
+ Q3 - Common Elements Between Two Arrays : `npm run testQ3`
 
-### Q4 - RESTful API : `npm run testQ4`
+ Q4 - RESTful API : `npm run testQ4`
 
 
 ## Running the Server for Q4 RESTful API
