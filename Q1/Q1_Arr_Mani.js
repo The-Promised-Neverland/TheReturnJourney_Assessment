@@ -8,8 +8,8 @@
 Sample Cases:
 
 Case 1:
-Input - [1,1,5,2,1,2]
-Output - [1,5,2]
+Input - [1,1,2,1,5]
+Output - [1,2,5]
 
 
 Case 2:
@@ -22,18 +22,16 @@ Run all tests by command - npm run testUniqueArray
 */
 
 
-const uniqueArray = (arr) => {  // O(N*N) Slower but without using any libraries and assuming range of numbers to be >=10^5
-    const res=[];
-    for(let i=0;i<arr.length;i++){
-        let isSeen=false;
-        for(let j=0;j<res.length;j++){
-            if(res[j]===arr[i]){
-                isSeen=true;
-                break;
-            }
-        }
-        if(isSeen===false){
-            res.push(arr[i]);
+
+import MergeSort from "../MergeSort.js";
+
+const uniqueArray = (arr) => {
+    arr = new MergeSort(arr).sort();
+    const res = [];
+    for (let i = 0; i < arr.length; i++) {
+        res.push(arr[i]);
+        while (i + 1 < arr.length && arr[i] === arr[i + 1]) {
+            i++;
         }
     }
     return res;

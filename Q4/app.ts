@@ -1,4 +1,5 @@
-import express from 'express';
+import express, { Application } from 'express';
+// import productRoutes from './routes/productRoutes.ts';
 import productRoutes from './routes/productRoutes.js';
 import chalk from 'chalk';
 import {
@@ -11,7 +12,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const app = express();
+const app : Application = express();
 
 app.use(cors())
 
@@ -23,7 +24,7 @@ app.use(timestampLogger, httpMethodLogger, urlLogger);
 
 app.use('/api/products', productRoutes);
 
-const port = process.env.PORT;
+const port: number = parseInt(process.env.PORT as string, 10);
 
 app.listen(port, () => {
   console.log(`🚀 ${chalk.blue('Server started on')} ${chalk.green('port', port)} in ${chalk.red(process.env.NODE_ENV, 'mode')}`);

@@ -24,40 +24,42 @@ Run all tests by command - npm run testCommonElements
 */
 
 
+import MergeSort from "../MergeSort.js"
+
 const searchInarr2 = (arr, x) => {
-    let low=0;
-    let high=arr.length-1;
-    while(low<=high){
-        const mid=Math.floor((low+high)/2);
-        if(arr[mid]===x){
+    let low = 0;
+    let high = arr.length - 1;
+    while (low <= high) {
+        const mid = Math.floor((low + high) / 2);
+        if (arr[mid] === x) {
             return true;
         }
-        else if(arr[mid]>x){
-            high=mid-1;
+        else if (arr[mid] > x) {
+            high = mid - 1;
         }
-        else{
-            low=mid+1;
+        else {
+            low = mid + 1;
         }
     }
     return false;
 }
 
-const commonElementsBetweenTwoArrays = (arr1,arr2) => {  // Time Complexity - O(N * logN)
-    arr1.sort();
-    arr2.sort();
-    const res=[];
-    for(let i=0;i<arr1.length;i++){
-        if(i>0 && arr1[i]===arr1[i-1]){  // ignoring duplicates
+const commonElementsBetweenTwoArrays = (arr1, arr2) => {  // Time Complexity - O(N * logN)
+    arr1 = new MergeSort(arr1).sort();
+    arr2 = new MergeSort(arr2).sort();
+    const res = [];
+    for (let i = 0; i < arr1.length; i++) {
+        if (i > 0 && arr1[i] === arr1[i - 1]) {  // ignoring duplicates
             continue;
         }
-        const isCommon=searchInarr2(arr2,arr1[i]);
-        if(isCommon){
+        const isCommon = searchInarr2(arr2, arr1[i]);
+        if (isCommon) {
             res.push(arr1[i]);
         }
     }
 
     return res;
-} 
+}
 
 export default commonElementsBetweenTwoArrays;
 

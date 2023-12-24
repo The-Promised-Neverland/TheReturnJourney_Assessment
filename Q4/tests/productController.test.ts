@@ -37,7 +37,7 @@ const mockProducts = [
 
 
 // Mocking the productService functions
-jest.mock("../services/productService.js", () => {
+jest.mock("../services/productService.ts", () => {
     const ProductModel = require("../models/productModel.js").default; // Direct import of ProductModel
     return {
         allProducts: jest.fn(() => mockProducts),
